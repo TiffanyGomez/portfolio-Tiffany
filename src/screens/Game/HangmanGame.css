@@ -1,0 +1,239 @@
+.hangman-game {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.game-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.hangman-drawing-container {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+}
+
+.hangman-drawing {
+  max-width: 250px;
+  max-height: 300px;
+}
+
+.word-and-keyboard-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.username-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: inherit;
+}
+
+.username-input-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.username-input-container input {
+  padding: 0.5rem;
+}
+
+.hangman-game h2 {
+  color: var(--pixar-blue);
+  margin-bottom: 1.5rem;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.win-message {
+  color: var(--pixar-red);
+  font-weight: bold;
+  animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+.word-display {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.letter {
+  width: 40px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: var(--pixar-blue);
+  color: white;
+  font-size: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.letter.revealed {
+  background-color: var(--pixar-green);
+}
+
+.virtual-keyboard button.incorrect {
+  background-color: #303030;
+}
+
+.guessed-letters {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.virtual-keyboard {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.virtual-keyboard button {
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background-color: var(--pixar-yellow);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.virtual-keyboard button:disabled {
+  cursor: not-allowed;
+}
+
+.virtual-keyboard button.correct {
+  background-color: var(--pixar-green);
+}
+
+.reset-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--pixar-red);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #ff4136;
+}
+
+.high-scores {
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.high-scores table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.high-scores th, 
+.high-scores td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: left;
+}
+
+.high-scores th {
+  background-color: var(--pixar-blue);
+  color: white;
+}
+
+.high-scores .current-player {
+  background-color: rgba(255, 90, 95, 0.1);
+  font-weight: bold;
+}
+
+.color-preview {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.game-over button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--pixar-blue);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.game-over button:hover {
+  background-color: #1A75FF;
+}
+
+/* Animation de secousse pour mauvaise devinette */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.wrong-guess {
+  animation: shake 0.5s;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .game-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hangman-drawing-container {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+
+  .word-and-keyboard-container {
+    width: 100%;
+  }
+
+  .virtual-keyboard {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .letter {
+    width: 30px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}

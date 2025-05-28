@@ -1,0 +1,158 @@
+.memory-game {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.username-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:inherit;
+}
+
+.username-input-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.username-input-container input {
+  padding: 0.5rem
+}
+
+.memory-game h2 {
+  color: var(--pixar-blue);
+  margin-bottom: 1.5rem;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.win-message {
+  color: var(--pixar-red);
+  font-weight: bold;
+  animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  aspect-ratio: 1;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, 
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  font-size: 3rem;
+}
+
+.card-front {
+  background-color: var(--pixar-yellow);
+  color: white;
+}
+
+.card-back {
+  background-color: var(--pixar-blue);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.reset-button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--pixar-red);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #ff4136;
+}
+
+.high-scores {
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+}
+
+.high-scores table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.high-scores th, 
+.high-scores td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f1f1f1;
+  text-align: left;
+}
+
+.high-scores th {
+  background-color: var(--pixar-blue);
+  color: white;
+}
+
+.high-scores .current-player {
+  background-color: rgba(255, 90, 95, 0.1);
+  font-weight: bold;
+}
+
+.game-over button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--pixar-blue);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.game-over button:hover {
+  background-color: #1A75FF;
+}

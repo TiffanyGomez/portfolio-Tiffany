@@ -1,0 +1,76 @@
+/* Variables de couleurs Pixar */
+:root {
+  --pixar-blue: #1A85FF;
+  --pixar-teal: #13C0D5;
+  --pixar-yellow: #FFC328;
+  --pixar-red: #FF5A5F;
+  --pixar-orange: #FF8C42;
+  --pixar-green: #5CDB95;
+  --dark: #000206;
+  --light: #F9F9F9;
+  --white: #FFFFFF;
+}
+
+/* Import de la police Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  overflow-x: hidden;
+}
+
+/* Barre de défilement personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--pixar-blue);
+  border-radius: 4px;
+}
+
+/* Styles généraux */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 800;
+}
+
+section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Styles de bouton */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--pixar-red);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(255, 90, 95, 0.3);
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 90, 95, 0.4);
+}
