@@ -45,64 +45,6 @@
   right: 5%;
 }
 
-/* Animation de la lampe Pixar */
-.pixar-lamp {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 80px;
-  height: 80px;
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.lamp-head {
-  position: absolute;
-  top: 10px;
-  left: 25px;
-  width: 30px;
-  height: 20px;
-  background-color: var(--pixar-yellow);
-  border-radius: 50% 50% 0 0;
-  transform-origin: bottom center;
-  animation: lampBounce 3s infinite;
-}
-
-.lamp-neck {
-  position: absolute;
-  top: 30px;
-  left: 35px;
-  width: 10px;
-  height: 40px;
-  background-color: var(--pixar-blue);
-  transform-origin: top center;
-  animation: lampNeckBounce 3s infinite;
-}
-
-.lamp-base {
-  position: absolute;
-  bottom: 0;
-  left: 25px;
-  width: 30px;
-  height: 10px;
-  border-radius: 5px;
-  background-color: var(--pixar-blue);
-}
-
-@keyframes lampBounce {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-15deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(15deg); }
-}
-
-@keyframes lampNeckBounce {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-5deg); }
-}
-
 /* Contenu principal */
 .hero-content {
 text-align: center

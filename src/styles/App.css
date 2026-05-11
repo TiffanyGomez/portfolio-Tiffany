@@ -111,8 +111,6 @@ main {
   height: 20px;
   background-color: var(--pixar-yellow);
   border-radius: 50% 50% 0 0;
-  transform-origin: bottom center;
-  animation: lampBounce 3s infinite;
 }
 
 .lamp-neck {
@@ -120,15 +118,13 @@ main {
   top: 30px;
   left: 35px;
   width: 10px;
-  height: 40px;
+  height: 20px;
   background-color: var(--pixar-blue);
-  transform-origin: top center;
-  animation: lampNeckBounce 3s infinite;
 }
 
 .lamp-base {
   position: absolute;
-  bottom: 0;
+  bottom: 12px;
   left: 25px;
   width: 30px;
   height: 10px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Projects.css';
+import { link } from 'framer-motion/client';
 
 function Projects() {
   // Données des projets
@@ -23,19 +24,21 @@ function Projects() {
     },
     {
       id: 3,
-      title: "Application d'Auto-École",
-      description: "Création d'une application de gestion pour auto-école avec C#. Gestion des élèves, des leçons et suivi des progrès.",
+      title: "Site web job board",
+      description: "Création d'un site web de job board avec javascript et node. Gestion des employés, des inactifs et suivi des recrutements.",
       emoji: "🚗",
-      tags: ["C#", "Base de données"],
-      bgColor: "var(--pixar-red)"
+      tags: ["javascript", "node", "Base de données"],
+      bgColor: "var(--pixar-red)",
+      link: "https://github.com/TiffanyGomez/Job_Board"
     },
     {
       id: 4,
-      title: "Site Web e-commerce",
-      description: "Création d'un site web pour 'steppy' avec React. Gestion des stocks, du panier et UI/UX.",
+      title: "Application windows d'un commerce",
+      description: "Création d'une application pour 'gomezBoutique' avec C#. Gestion des stocks, du panier et UI/UX.",
       emoji: "👟",
-      tags: ["React", "Base de données"],
-      bgColor: "var(--pixar-green)"
+      tags: ["C#", "Base de données"],
+      bgColor: "var(--pixar-green)",
+      link: "https://github.com/TiffanyGomez/boutique-window/tree/main/gomezBoutique/gomezBoutique/gomezBoutique"
     }
   ];
   
@@ -62,6 +65,12 @@ function Projects() {
       }
     }
   };
+
+ const handleProjectClick = (link) => {
+    if (link) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+  };
   
   return (
     <section className="projects">
@@ -84,13 +93,15 @@ function Projects() {
           {projects.map((project) => (
             <motion.div 
               key={project.id} 
-              className="project-card"
+              className={`project-card ${project.link ? 'clickable' : ''}`}
               variants={cardVariants}
               whileHover={{ 
                 scale: 1.05, 
                 rotate: 2,
                 boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)' 
               }}
+              onClick={() => handleProjectClick(project.link)}
+              style={{ cursor: project.link ? 'pointer' : 'default' }}
             >
               <div 
                 className="project-img" 

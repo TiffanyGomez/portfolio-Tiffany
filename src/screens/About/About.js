@@ -273,7 +273,7 @@ function About() {
                 <div className="card-bg card-bg-2"></div>
                 <div className="card-icon">🚀</div>
                 <h3 className="card-title">Mes passions</h3>
-                <p className="card-text">Développement web, programmation, tennis, jeu d'échecs, les randonnées et les animaux.</p>
+                <p className="card-text">Développement web, programmation, Réalité virtuelle, tennis, jeu d'échecs, les randonnées et les animaux.</p>
               </motion.div>
               
               <motion.div 

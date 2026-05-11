@@ -60,13 +60,7 @@ function Hero() {
       
       {/* Conteneur pour les bulles animées */}
       <div className="bubbles"></div>
-      
-      {/* Animation de la lampe Pixar */}
-      <div className="pixar-lamp">
-        <div className="lamp-head"></div>
-        <div className="lamp-neck"></div>
-        <div className="lamp-base"></div>
-      </div>
+  
       
       <div className="container">
         <motion.div 

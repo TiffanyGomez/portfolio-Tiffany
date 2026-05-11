@@ -79,7 +79,7 @@ function Experience() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Expérience
+          Expériences
         </motion.h2>
         
         <motion.div 

@@ -9,16 +9,17 @@ function Skills() {
       id: "languages",
       title: "Langages de programmation",
       skills: [
-        { name: "HTML", icon: "html-icon" },
-        { name: "CSS", icon: "css-icon" },
         { name: "JavaScript", icon: "js-icon" },
         { name: "Python", icon: "python-icon" },
         { name: "PHP", icon: "php-icon" },
         { name: "C#", icon: "csharp-icon" },
         { name: "SQL", icon: "sql-icon" },
         { name: "Java", icon: "java-icon" },
+        { name: "Scala", icon: "scala-icon" },
         { name: "React", icon: "react-icon" },
-        { name: "Node", icon: "node-icon" }
+        { name: "Node", icon: "node-icon" },
+        { name: "HTML", icon: "html-icon" },
+        { name: "CSS", icon: "css-icon" }
 
       ]
     },
@@ -36,7 +37,7 @@ function Skills() {
       id: "other",
       title: "Autres compétences",
       skills: [
-        { name: "Anglais B2", icon: "🌐" },
+        { name: "Anglais C1", icon: "🌐" },
         { name: "Tennis", icon: "🎾" },
         { name: "Échecs", icon: "♟️" }
       ]

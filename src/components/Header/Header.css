@@ -27,6 +27,8 @@ nav {
   display: flex;
   align-items: center;
   text-decoration: none;
+  z-index: 102;
+  position: relative;
 }
 
 .logo-icon {
@@ -74,9 +76,150 @@ nav {
   width: 100%;
 }
 
+/* Bouton hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: 102;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--dark);
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger span:last-child {
+  margin-bottom: 0;
+}
+
+/* Animation du bouton hamburger */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  background-color: var(--pixar-red);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  background-color: var(--pixar-red);
+}
+
+/* Menu mobile */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background-color: var(--white);
+  z-index: 101;
+  transition: right 0.3s ease;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu-content {
+  padding: 100px 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobile-menu-content a {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  position: relative;
+}
+
+.mobile-menu-content a:hover,
+.mobile-menu-content a.active {
+  color: var(--pixar-red);
+  transform: translateX(10px);
+}
+
+.mobile-menu-content a::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--pixar-red);
+  transition: width 0.3s;
+}
+
+.mobile-menu-content a:hover::before,
+.mobile-menu-content a.active::before {
+  width: 5px;
+}
+
+/* Overlay pour fermer le menu */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  animation: fadeInOverlay 0.3s ease forwards;
+}
+
+@keyframes fadeInOverlay {
+  to {
+    opacity: 1;
+  }
+}
+
 /* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
+@media (max-width: 937px) {
+  .desktop-menu {
     display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Ajustements pour très petits écrans */
+@media (max-width: 480px) {
+  .mobile-menu {
+    width: 100%;
+    right: -100%;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .logo-icon {
+    width: 35px;
+    height: 35px;
   }
 }
