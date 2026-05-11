@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/portfolio-Tiffany/static/css/main.2cec08d0.css",
+    "main.js": "/portfolio-Tiffany/static/js/main.38ece666.js",
+    "static/js/453.1f7e7c34.chunk.js": "/portfolio-Tiffany/static/js/453.1f7e7c34.chunk.js",
+    "static/media/coq_marchant.png": "/portfolio-Tiffany/static/media/coq_marchant.e8befbda77131c5a9d24.png",
+    "index.html": "/portfolio-Tiffany/index.html",
+    "main.2cec08d0.css.map": "/portfolio-Tiffany/static/css/main.2cec08d0.css.map",
+    "main.38ece666.js.map": "/portfolio-Tiffany/static/js/main.38ece666.js.map",
+    "453.1f7e7c34.chunk.js.map": "/portfolio-Tiffany/static/js/453.1f7e7c34.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2cec08d0.css",
+    "static/js/main.38ece666.js"
+  ]
+}
